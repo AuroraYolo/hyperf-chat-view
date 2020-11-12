@@ -16,7 +16,7 @@ import SocketIO from 'socket.io-client';
 
 
 // 引入WebSocket消息处理类
-// import SocketResourceHandle from '@/plugins/socket/socket-resource-handle';
+import SocketResourceHandle from '@/plugins/socket/socket-resource-handle';
 // 引入自定义全局css
 import '@static/css/im-base.css';
 
@@ -94,6 +94,7 @@ let VueApp = new Vue({
       this.socket.io.on('reconnect', () => {
         store.commit('UPDATE_SOCKET_STATUS', true);
       })
+      //TODO socket-io监听事件管理SocketResourceHandle
       Vue.use(this.socket)
       // this.socket.initWebSocket();
     }, // 更新当前正在对话的用户数据
