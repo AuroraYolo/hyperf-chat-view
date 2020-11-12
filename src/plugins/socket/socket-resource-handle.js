@@ -26,7 +26,6 @@ class SocketResourceHandle {
 
   constructor(resuore) {
     this.resuore = resuore;
-
     // 判断消息事件是否注册
     if (this.__proto__.hasOwnProperty(this.events[resuore.event])) {
       this[this.events[resuore.event]]();

@@ -11,17 +11,12 @@ import '@/plugins/element-ui';
 // 全局引入自定义的WebSocket 插件
 // import WsSocket from '@/plugins/socket/ws-socket';
 import VueSocketIO from 'vue-socket.io';
-
 import SocketIO from 'socket.io-client';
 
-
-// 引入WebSocket消息处理类
-import SocketResourceHandle from '@/plugins/socket/socket-resource-handle';
 // 引入自定义全局css
 import '@static/css/im-base.css';
 
 Vue.config.productionTip = false;
-
 import {
   getToken
 } from '@/utils/auth';
@@ -63,9 +58,8 @@ let VueApp = new Vue({
     loadWebsocket(){
       let app = this, store = this.$store;
       const token = `${getToken()}`
-
       const socketInstance = SocketIO(process.env.WEB_SOCKET_URL, {
-        transports: ['websocket','polling'],
+        transports: ['websocket', 'polling'],
         transportOptions: {
           polling: {
             extraHeaders: {
@@ -73,11 +67,10 @@ let VueApp = new Vue({
             }
           }
         },
-        query:{
-          token:token
+        query: {
+          token: token
         }
       });
-
       this.socket = new VueSocketIO({
         debug: true,
         connection: socketInstance
@@ -130,7 +123,7 @@ let VueApp = new Vue({
         path: "/message"
       });
     }
-  }
+  },
 });
 // 导出应用实例(其它js文件中可直接读取vue应用)
 export default VueApp;

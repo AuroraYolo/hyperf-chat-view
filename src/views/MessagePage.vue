@@ -140,6 +140,8 @@
   import UserBusinessCard from "@/components/user/UserBusinessCard";
   import SearchUsers from "@/components/user/SearchUsers";
   import Contextmenu from "vue-contextmenujs";
+  // 引入WebSocket消息处理类
+  import SocketResourceHandle from '@/plugins/socket/socket-resource-handle';
 
   Vue.use(Contextmenu);
 
@@ -179,23 +181,43 @@
       SearchUsers
     },
     sockets: {
-      // 三个默认方法
-      // 链接成功
-      connect () {
-        console.log('socket connected')
-      },
-      // 链接失败
-      disconnect () {
-        console.log('socket disconnect')
-      },
-      // 重新连接
-      reconnect () {
-        console.log('socket reconnect')
-      },
       // 第二种：监听、接收消息方法
-      event (data) {
-        console.log(data, 'TEAM_NOTICE，推送的消息')
-      }
+      chat_message(data){
+        new SocketResourceHandle({
+          event:'chat_message',
+          data
+        });
+      },
+      login_notify(data){
+        new SocketResourceHandle({
+          event:'login_notify',
+          data
+        });
+      },
+      join_group(data){
+        new SocketResourceHandle({
+          event:'join_group',
+          data
+        });
+      },
+      friend_apply(data){
+        new SocketResourceHandle({
+          event:'friend_apply',
+          data
+        });
+      },
+      input_tip(data){
+        new SocketResourceHandle({
+          event:'input_tip',
+          data
+        });
+      },
+      revoke_records(data){
+        new SocketResourceHandle({
+          event:'revoke_records',
+          data
+        });
+      },
     },
     data() {
       return {
@@ -308,6 +330,12 @@
     },
     mounted() {
       this.scrollEvent();
+      // 第一种：监听，接收消息
+      this.$socket.emit('event', {
+        projectId: '88',
+        theme: 'getUserInfo',
+        time: 10000,
+      });
     },
     destroyed() {
       document.title = title;

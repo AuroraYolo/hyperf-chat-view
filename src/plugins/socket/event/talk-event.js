@@ -20,7 +20,7 @@ class TalkEvent extends AppMessageEvent {
 
   /**
    * 初始化构造方法
-   * 
+   *
    * @param {object} resource Socket消息
    */
   constructor(resource) {
@@ -58,8 +58,8 @@ class TalkEvent extends AppMessageEvent {
 
   /**
    * 更新对话记录
-   * 
-   * @param {int} idx 聊天列表的索引 
+   *
+   * @param {int} idx 聊天列表的索引
    */
   updateTalkRecord(idx) {
     let record = this.resource.data;
@@ -94,8 +94,8 @@ class TalkEvent extends AppMessageEvent {
 
   /**
    * 更新对话列表记录
-   * 
-   * @param {int} idx 聊天列表的索引 
+   *
+   * @param {int} idx 聊天列表的索引
    */
   updateTalkItem(idx) {
     this.vm.$store.commit('incrUnreadNum');
@@ -148,8 +148,8 @@ class TalkEvent extends AppMessageEvent {
 
   /**
    * 根据用户对话索引获取对话数组对应的key
-   * 
-   * @param {string} index_name 
+   *
+   * @param {string} index_name
    */
   getIndex(index_name) {
     return this.vm.$store.state.talks.items.findIndex(item => item.index_name == index_name);
