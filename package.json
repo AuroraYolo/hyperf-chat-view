@@ -1,8 +1,8 @@
 {
-  "name": "LumenIM",
+  "name": "HyperfIM",
   "version": "1.0.0",
-  "description": "LumenIM 是一个网页版在线聊天应用,功能主要包含添加好友、添加群聊等基本功能",
-  "author": "YuanDong <837215079@qq.com>",
+  "description": "HyperfIM 是一个网页版在线聊天应用,功能主要包含添加好友、添加群聊等基本功能",
+  "author": "HePing <847050412@qq.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -15,7 +15,7 @@
   },
   "keywords": [
     "vue",
-    "LumenIM"
+    "HyperfIM"
   ],
   "dependencies": {
     "axios": "^0.19.0",

@@ -7,5 +7,5 @@ module.exports = {
   WEB_SOCKET_URL: '"ws://127.0.0.1:9502/"',
 
   // 网站名称
-  WEBSITE_NAME: '"Lumen IM"',
+  WEBSITE_NAME: '"HyperfIM"',
 }

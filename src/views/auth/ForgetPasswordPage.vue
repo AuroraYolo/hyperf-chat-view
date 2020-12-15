@@ -52,7 +52,7 @@
           消息类型包含文字、图片、文件、自定义表情包及代码块。新增编辑笔记及笔记分享好友功能 ...</p>
       </el-aside>
     </el-container>
-    
+
     <div class="fly bg-fly-circle1"></div>
     <div class="fly bg-fly-circle2"></div>
     <div class="fly bg-fly-circle3"></div>
@@ -84,7 +84,7 @@
       let validatePass2 = (rule, value, callback) => {
         if (value === '') {
           callback(new Error('请再次输入密码'));
-        } else if (value !== this.form.password) {
+        } else if (value !== this.form.new_password) {
           callback(new Error('两次输入密码不一致!'));
         } else {
           callback();
