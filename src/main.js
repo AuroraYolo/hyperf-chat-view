@@ -77,10 +77,17 @@ let VueApp = new Vue({
       })
       this.socket.io.on('connect', () => {
         store.commit('UPDATE_SOCKET_STATUS', true);
+        this.$notify.success({
+          title: '消息',
+          message: '服务端连接成功!'
+        })
       })
       this.socket.io.on('disconnect', () => {
         store.commit('UPDATE_SOCKET_STATUS', false);
-        this.$router.push("/login")
+        this.$notify.error({
+          title: '严重错误',
+          message: '服务端已断开连接!'
+        })
       })
       this.socket.io.on('reconnect', () => {
         store.commit('UPDATE_SOCKET_STATUS', true);

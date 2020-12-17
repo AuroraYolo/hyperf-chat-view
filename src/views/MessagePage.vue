@@ -195,6 +195,9 @@
           data
         });
       },
+      notify(data){
+        this.$notify.info(data.notify)
+      },
       join_group(data){
         new SocketResourceHandle({
           event:'join_group',
