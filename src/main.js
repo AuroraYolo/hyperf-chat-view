@@ -75,15 +75,13 @@ let VueApp = new Vue({
         debug: true,
         connection: socketInstance
       })
-      // Websocket 连接成功回调方法
       this.socket.io.on('connect', () => {
         store.commit('UPDATE_SOCKET_STATUS', true);
       })
-      // Websocket 断开连接回调方法
       this.socket.io.on('disconnect', () => {
         store.commit('UPDATE_SOCKET_STATUS', false);
+        this.$router.push("/login")
       })
-      // Websocket 断开连接回调方法
       this.socket.io.on('reconnect', () => {
         store.commit('UPDATE_SOCKET_STATUS', true);
       })
