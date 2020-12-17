@@ -331,12 +331,6 @@
     },
     mounted() {
       this.scrollEvent();
-      // 第一种：监听，接收消息
-      // this.$socket.emit('event_talk', {
-      //   projectId: '88',
-      //   theme: 'getUserInfo',
-      //   time: 10000,
-      // });
     },
     destroyed() {
       document.title = title;
