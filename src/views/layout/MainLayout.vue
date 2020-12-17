@@ -32,13 +32,13 @@
                 </router-link>
               </el-tooltip>
 
-              <el-tooltip class="item" content="我的笔记" placement="right" :visible-arrow="false">
-                <router-link to="/notes">
-                  <div class="menu-items" :class="{'menu-items-active':idx == 2}">
-                    <i class="el-icon-notebook-1"></i>
-                  </div>
-                </router-link>
-              </el-tooltip>
+<!--              <el-tooltip class="item" content="我的笔记" placement="right" :visible-arrow="false">-->
+<!--                <router-link to="/notes">-->
+<!--                  <div class="menu-items" :class="{'menu-items-active':idx == 2}">-->
+<!--                    <i class="el-icon-notebook-1"></i>-->
+<!--                  </div>-->
+<!--                </router-link>-->
+<!--              </el-tooltip>-->
 
               <el-tooltip class="item" content="我的设置" placement="right" :visible-arrow="false">
                 <router-link to="/settings">
