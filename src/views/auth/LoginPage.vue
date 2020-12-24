@@ -61,8 +61,9 @@
                 </el-divider>
               </p>
               <el-form-item class="preview-account">
-                <p>预览账号:18798272054 / 密码: admin123</p>
-                <p>预览账号:18798272055 / 密码: admin123</p>
+                <p>预览账号:13890181111 / 密码: hyperf1234</p>
+                <p>预览账号:13890182222 / 密码: hyperf1234</p>
+                <p>预览账号:13890183333 / 密码: hyperf1234</p>
               </el-form-item>
             </el-form>
           </div>
