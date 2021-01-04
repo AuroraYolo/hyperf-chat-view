@@ -10,7 +10,7 @@ class LoginEvent extends AppMessageEvent {
 
   /**
    * 初始化构造方法
-   * 
+   *
    * @param {object} resource Socket消息
    */
   constructor(resource) {
@@ -20,6 +20,10 @@ class LoginEvent extends AppMessageEvent {
   }
 
   handle() {
+    this.vm.$notify.success({
+      title: '好友上线通知!',
+      message: '好友['+ this.resource.user_id + ']已上线,您们可以开始聊天啦!'
+    })
     this.vm.$store.dispatch("updateFriendStatus", `${this.resource.status}_${this.resource.user_id}`);
   }
 }
