@@ -26,7 +26,7 @@
                   @keyup.enter.native="onSubmit('form')" />
               </el-form-item>
               <el-form-item prop="sms_code">
-                <el-input v-model="form.sms_code" placeholder="验证码(随意填写)" class="cuborder-radius" maxlength="6"
+                <el-input v-model="form.sms_code" placeholder="验证码" class="cuborder-radius" maxlength="6"
                   @keyup.enter.native="onSubmit('form')" style="width: 205px;" />
 
                 <div class="send-code-btn send-sms-disable" v-if="smsLock">正在发送 ...</div>
@@ -55,7 +55,7 @@
           消息类型包含文字、图片、文件、自定义表情包及代码块。新增编辑笔记及笔记分享好友功能 ...</p>
       </el-aside>
     </el-container>
-    
+
     <div class="fly bg-fly-circle1"></div>
     <div class="fly bg-fly-circle2"></div>
     <div class="fly bg-fly-circle3"></div>
